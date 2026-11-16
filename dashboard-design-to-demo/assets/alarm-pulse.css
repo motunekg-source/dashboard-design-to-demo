@@ -1,0 +1,30 @@
+/* Apply to a <g data-alert="true"> with a translated alarm-node group inside.
+   Geometry is stationary; the two SVG ellipses scale around that chosen point. */
+[data-alert="false"] .alarm-node{display:none}
+.alarm-node{pointer-events:none}
+.alarm-node .wave{transform-box:fill-box;transform-origin:center;animation:dashboard-alarm 2.4s ease-out infinite}
+@keyframes dashboard-alarm{
+  0%{transform:scale(.65);opacity:0}
+  12%{opacity:.85}
+  95%,100%{transform:scale(2.5);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){.alarm-node .wave{animation:none;opacity:0}}
+
+/* Position the parent. The marker, label and readable value are siblings of this halo. */
+.location-halo:is([data-breathe="true"], [data-breathe="inward"]) {
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: location-halo-breathe var(--halo-period, 2.4s) ease-in-out infinite;
+}
+.location-halo[data-breathe="inward"] {
+  --halo-period: 2.15s;
+  --halo-min-scale: .86;
+}
+@keyframes location-halo-breathe {
+  0%, 100% { transform: scale(var(--halo-min-scale, 1)); opacity: var(--halo-opacity, 1); }
+  50% { transform: scale(1.08); opacity: calc(var(--halo-opacity, 1) * .86); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .location-halo:is([data-breathe="true"], [data-breathe="inward"]) { animation: none; opacity: var(--halo-opacity, 1); }
+}

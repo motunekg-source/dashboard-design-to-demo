@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>设计稿还原 V1.0 · 使用说明</title>
+<title>数据可视化-交互 Demo 还原 V1.0 · 使用说明</title>
 <style>
   :root { color-scheme:light; --ink:#1a302d; --teal:#145746; --muted:#485f57; --rule:#ccd8d0; --light:#e9f3ec; }
   * { box-sizing:border-box; }
@@ -36,9 +36,10 @@
   @media print { .route { display:block; margin:10px 0; } .choice+label,button,.download { display:none; } main { margin:0; } }
 </style>
 <main>
-  <header><span class="version">设计稿还原 V1.0 · 使用说明</span>
-    <h1>把一张图做成可试玩的网页</h1>
-    <p>准备一张设计图或 GIF。第一次体验，选「直接复制」；想在同一个 AI 工具中多次使用，且工具支持导入自定义技能，选「安装 Skill」。完成其中一条就可以。</p>
+  <header><span class="version">数据可视化-交互 Demo 还原 V1.0 · 使用说明</span>
+    <h1>把数据可视化设计图做成可交互 Demo</h1>
+    <p>准备一张数据可视化设计图或 GIF。第一次体验，选「直接复制」；想在同一个 AI 工具中多次使用，且工具支持导入自定义技能，选「安装 Skill」。完成其中一条就可以。</p>
+  <p class="note">目前已测试数据看板、科技地球、智慧园区、环境监测等可视化项目。其他类型的设计稿尚未验证。</p>
   </header>
   <fieldset>
     <legend>选择你的用法</legend>
@@ -49,13 +50,15 @@
       <ol>
         <li>点击 <button id="copy" type="button">复制完整指令</button>。如果当前阅读器无法复制，打开<a href="可复制正文.txt">可复制正文.txt</a>，全选并复制全文。</li>
         <li>打开能接收图片的 AI 工具，新建对话，把刚复制的全文粘贴到输入框，先留在输入框里。</li>
-        <li>在<strong>同一条消息</strong>里点附件或「＋」，选你的设计图。看到图片已附上后，点击<strong>发送</strong>。完整指令里已经写好了制作要求。</li>
+        <li>在<strong>同一条消息</strong>里点附件或「＋」，选你的数据可视化设计图。看到图片已附上后，点击<strong>发送</strong>。完整指令里已经写好了制作要求。</li>
         <li>收到回复后，打开试玩入口；如果收到的是网页文件，按回复里的步骤打开。想调细节，就在这条对话里继续说。</li>
       </ol>
       <p class="note" id="feedback" role="status" aria-live="polite"></p>
-      <details id="full"><summary>展开完整指令</summary><pre id="bodyText" tabindex="0"># 设计稿还原 · V1.0
+      <details id="full"><summary>展开完整指令</summary><pre id="bodyText" tabindex="0"># 数据可视化-交互 Demo 还原 · V1.0
 
-使用本次上传的设计图或 GIF 制作网页 Demo。一张清晰原图即可开始。首次成品以九成视觉观感为目标。在原稿大小和机位看，用户应当能认出同一个主体、同一处场景和同一组灯光。简单主体与可辨的二维元素应逐项吻合。复杂主体可保留需要近看才发现的细微差异。整体像素分数仅供定位问题。
+使用本次上传的数据可视化设计图或 GIF 制作可交互的网页 Demo。一张清晰原图即可开始。首次成品以九成视觉观感为目标。在原稿大小和机位看，用户应当能认出同一个主体、同一处场景和同一组灯光。简单主体与可辨的二维元素应逐项吻合。复杂主体可保留需要近看才发现的细微差异。整体像素分数仅供定位问题。
+
+目前已测试数据看板、科技地球、智慧园区、环境监测等可视化项目。其他类型的设计稿尚未验证。
 
 ## 先对准原稿中的主体
 
@@ -108,10 +111,10 @@
     <section class="route" id="install-route">
       <h2>先安装一次，再到 AI 对话里用</h2>
       <ol>
-        <li><strong>取得安装包。</strong> 点 <a class="download" href="设计稿还原-V1.0-Skill.zip" download>下载 Skill 安装包</a>；如果刚解压了朋友发的分享包，里面已有这个文件。</li>
-        <li><strong>安装并启用。</strong> 在 AI 工具里找到「技能 / Skills」，打开「导入」或「上传自定义技能」，选择 <code>设计稿还原-V1.0-Skill.zip</code>。若工具要求选文件夹，解压这个安装包，选择含 <code>SKILL.md</code> 的 <code>dashboard-design-to-demo</code> 文件夹。确认技能出现在已安装列表中，并已启用。</li>
-        <li><strong>到对话里上传原图。</strong> 新建 AI 对话。如果输入框旁有技能选择器，选 <code>dashboard-design-to-demo</code>。点附件或「＋」，上传你的设计图或 GIF。</li>
-        <li><strong>发出任务。</strong> 图片附好后，输入下面这句话并发送。<blockquote>请使用 dashboard-design-to-demo（设计稿还原）把附图做成可试玩的网页。请先对照原图自查，再把试玩入口和同机位对比图给我。</blockquote>这条消息会启动本次制作。下次换图，从第 3 步开始。</li>
+        <li><strong>取得安装包。</strong> 点 <a class="download" href="数据可视化-交互 Demo 还原-V1.0-Skill.zip" download>下载 Skill 安装包</a>；如果刚解压了朋友发的分享包，里面已有这个文件。</li>
+        <li><strong>安装并启用。</strong> 在 AI 工具里找到「技能 / Skills」，打开「导入」或「上传自定义技能」，选择 <code>数据可视化-交互 Demo 还原-V1.0-Skill.zip</code>。若工具要求选文件夹，解压这个安装包，选择含 <code>SKILL.md</code> 的 <code>dashboard-design-to-demo</code> 文件夹。确认技能出现在已安装列表中，并已启用。</li>
+        <li><strong>到对话里上传原图。</strong> 新建 AI 对话。如果输入框旁有技能选择器，选 <code>dashboard-design-to-demo</code>。点附件或「＋」，上传你的数据可视化设计图或 GIF。</li>
+        <li><strong>发出任务。</strong> 图片附好后，输入下面这句话并发送。<blockquote>请使用 dashboard-design-to-demo（数据可视化-交互 Demo 还原），把这张数据可视化设计图做成可交互的网页 Demo。请对照原图自查，并提供试玩入口和同机位对比图。</blockquote>这条消息会启动本次制作。下次换图，从第 3 步开始。</li>
         <li><strong>打开结果。</strong> 点击 AI 回复中的试玩入口，或按回复里的步骤打开网页文件。需要微调时，继续用当前对话。</li>
       </ol>
     </section>
@@ -127,6 +130,15 @@
     <p>在原稿机位看主体轮廓、材质和光影，再转到侧后方，观察贴图接缝和部件连接。原图背后的细节按可见结构补全。即使环境能预览，复杂车型或特殊材质也取决于 AI 的建模和调试能力；已发现而未修好的地方应标「待修」。</p>
     <p>有些网页需要本地网页服务或支持三维绘图的浏览器，AI 会按实际情况写明怎样打开。若要精准对应实物，可再补一张后斜照片或绕转 GIF。涉及额外登录、付费或把图交给额外服务时，由你决定。</p>
   </details>
+
+  <section class="common" aria-labelledby="support-title">
+    <h2 id="support-title">自愿打赏</h2>
+    <p>如果这个 Skill 对你有帮助，欢迎请我喝杯咖啡 ☕</p>
+    <p class="note">完全自愿，不打赏也可以正常使用。谢谢支持！</p>
+    <details><summary>展开微信收款码</summary>
+      <p><img src="wechat-support.jpg" alt="作者提供的微信收款码，用于自愿打赏" width="280" style="max-width:100%;height:auto"></p>
+    </details>
+  </section>
 </main>
 <script>
   const bodyText = document.getElementById('bodyText');

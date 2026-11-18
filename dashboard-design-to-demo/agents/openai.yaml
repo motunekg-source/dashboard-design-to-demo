@@ -1,0 +1,4 @@
+interface:
+  display_name: "数据可视化-交互 Demo 还原"
+  short_description: "将数据可视化设计图还原成可交互、可继续修改的网页 Demo"
+  default_prompt: "请使用 $dashboard-design-to-demo，把附上的数据可视化设计图做成可交互的网页 Demo，并提供试玩入口和同机位对比图。"
